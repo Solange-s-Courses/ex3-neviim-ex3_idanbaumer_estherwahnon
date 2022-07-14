@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="js/myfunctions.js"></script>
+    <title>Exercise 3 - Idan Baumer and Esther Wahanon</title>
+
+</head>
+<body>
+<div class="container">
+    <div class="text-center mb-4">
+        <div class="card">
+            <img class="img-fluid" src="images/saturn.jpg" alt="...">
+            <div class="card-img-overlay text-white text-center">
+                <div class="card-body">
+                    <div class="card-header text-black" style="background-color: white;">
+                        <h3 class="card-title">Mars images browser</h3>
+                        <p class="card-text">Browse Nasa Mars images and save your preferred ones. </p>
+                        <button style="background-color : aqua " data-bs-toggle="modal" data-bs-target="#modalDialog">
+                            Who am I
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="modalDialog" tabindex="-1" aria-labelledby="modalLabel">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="modalLabel">Personal Details</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Name: Esther Wahnon Amselem <br>
+                                        Email: estherwa@edu.hac.ac.il<br>
+                                        ID:330002429 <br><br>
+                                        Name: Idan  Baumer <br>
+                                        Email: idanba@edu.hac.ac.il <br>
+                                        ID:318160595
+                                    </div>
+                                    <div class="modal-footer">
+                                        <div style="text-align:center" class="container-fluid">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="p-3 mb-2 bg-info text-white">Search for images:</div>
+
+            <form id="todo-input-form">
+                <label for="search-text" class="form-label">Date (YYYY-MM-DD) or Sol</label>
+                <input id="search-text" type="text" class="form-control">
+                <div class="alert alert-danger" role="alert" hidden></div>
+                <br>
+
+                <p>Select Rover</p>
+                <select class="form-select" id="roverSelect" aria-label="Default select">
+                    <option selected value="">Select Rover</option>
+                    <option value="Curiosity">Curiosity</option>
+                    <option value="Opportunity">Opportunity</option>
+                    <option value="Spirit">Spirit</option>
+                </select>
+                <div class="alert alert-danger" role="alert" hidden></div>
+                <br>
+                <p>Select Camara</p>
+                <select class="form-select" id="cameraSelect" aria-label="Default select">
+                    <option selected value="">Choose camera</option>
+                    <option value="FHAZ">FHAZ</option>
+                    <option value="FHAZ">RHAZ</option>
+                    <option value="MAST">MAST</option>
+                    <option value="CHEMCAM">CHEMCAM</option>
+                    <option value="MAHLI">MAHLI</option>
+                    <option value="MARDI">MARDI</option>
+                    <option value="NAVCAM">NAVCAM</option>
+                    <option value="PANCAM">PANCAM</option>
+                    <option value="MINITES">MINITES</option>
+                </select>
+                <div class="alert alert-danger" role="alert" hidden></div>
+                <br><br>
+                <button type="button" id="searchBtn" class="btn btn-info">search</button>
+                <input type="reset" id="clearBtn" class="btn btn-info"/>
+                <br><br>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <div class="p-3 mb-2 bg-info  text-white">Saved Images</div>
+            <button type="button" id="slideBtn" class="btn btn-secondary">Start Slide show</button>
+            <button type="button" id="stopSlideBtn" class="btn btn-secondary">Stop slide show</button>
+            <ul id="savedPicLists"></ul>
+        </div>
+
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel" hidden>
+            <div class="carousel-inner"></div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <div class="col" style="text-align:center">
+            <h3 class="p-3 mb-2 bg-info text-white">Search result:</h3>
+            <div id="imagesList">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+            crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
